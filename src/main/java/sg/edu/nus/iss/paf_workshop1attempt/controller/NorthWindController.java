@@ -7,11 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import sg.edu.nus.iss.paf_workshop1attempt.model.Customer;
 import sg.edu.nus.iss.paf_workshop1attempt.service.customerSvc;
 
-@Controller
+@RestController
 public class NorthWindController {
 
     @Autowired
@@ -24,12 +25,12 @@ public class NorthWindController {
     }
 
     @GetMapping(path="/api/customer/{custId}", consumes="application/json")
-    public Customer getCustomerById(@PathVariable(name="custID") int custID ) {
+    public Customer getCustomerById(@PathVariable(name="custId") int custID ) {
         return svc.getCustomerById(custID);
     }
 
     @GetMapping(path="/api/customer/{custId}/orders", consumes="application/json")
-    public Customer getOrdersById(@PathVariable(name="custID") int custID ) {
+    public Customer getOrdersById(@PathVariable(name="custId") int custID ) {
         return svc.getCustomerById(custID);
     }
 

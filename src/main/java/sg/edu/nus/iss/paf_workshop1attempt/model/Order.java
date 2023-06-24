@@ -39,6 +39,51 @@ public class Order {
     public void setShippedDate(Date shippedDate) {
         this.shippedDate = shippedDate;
     }
+    @Override
+    public String toString() {
+        return "Order [id=" + id + ", employeeID=" + employeeID + ", custID=" + custID + ", orderDate=" + orderDate
+                + ", shippedDate=" + shippedDate + "]";
+    }
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + id;
+        result = prime * result + employeeID;
+        result = prime * result + custID;
+        result = prime * result + ((orderDate == null) ? 0 : orderDate.hashCode());
+        result = prime * result + ((shippedDate == null) ? 0 : shippedDate.hashCode());
+        return result;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Order other = (Order) obj;
+        if (id != other.id)
+            return false;
+        if (employeeID != other.employeeID)
+            return false;
+        if (custID != other.custID)
+            return false;
+        if (orderDate == null) {
+            if (other.orderDate != null)
+                return false;
+        } else if (!orderDate.equals(other.orderDate))
+            return false;
+        if (shippedDate == null) {
+            if (other.shippedDate != null)
+                return false;
+        } else if (!shippedDate.equals(other.shippedDate))
+            return false;
+        return true;
+    }
 
+    
+    
     
 }
