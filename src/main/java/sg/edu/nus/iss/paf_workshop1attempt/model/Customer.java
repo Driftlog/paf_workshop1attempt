@@ -1,12 +1,13 @@
 package sg.edu.nus.iss.paf_workshop1attempt.model;
 
 public class Customer {
+    
     private int id;
     private String company;
     private String firstName;
     private String lastName;
     private String jobTitle;
-    
+
     public int getId() {
         return id;
     }

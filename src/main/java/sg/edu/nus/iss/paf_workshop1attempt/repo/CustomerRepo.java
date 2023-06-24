@@ -26,7 +26,7 @@ public class CustomerRepo {
 
     private final String getLimitedSQL = "select * from customers limit ? offset ?";
    
-    private final String getOrder = "select * from orders where customer_id = ?";
+    private final String getOrdersSQL = "select * from orders where customer_id = ?";
 
     public List<Customer> getAll() {
         final SqlRowSet rs = template.queryForRowSet(getAllSQL);
@@ -73,6 +73,6 @@ public class CustomerRepo {
         return (Collections.unmodifiableList(customers));
     }
 
-    
+        
     
 }
